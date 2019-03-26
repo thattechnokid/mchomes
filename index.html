@@ -50,10 +50,16 @@
 						<h1 style="color:black">Keep in touch!</h1>
 						<small style="color:black">I'll get back to you as quickly as possible</small>
 
-						<form action="#">
-							<input placeholder="Name" type="text" required />
-							<input placeholder="Email" type="email" required />
-							<textarea placeholder="Message"></textarea>
+						<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+							<p class="hidden">
+								<label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+							</p>
+							<input placeholder="Name" type="text" required name="Name"/>
+							<input placeholder="Email" type="email" name="E-Mail" required />
+							<textarea placeholder="Message" name="Message"></textarea>
+							</p>
+							<div data-netlify-recaptcha="true"></div>
+							<p>
 							<input class="formBtn" type="submit" />
 							<input class="formBtn" type="reset" />
 						</form>
